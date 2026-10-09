@@ -1,0 +1,9 @@
+.git
+node_modules
+frontend/react/node_modules
+frontend/react/dist
+backend/.venv
+backend/__pycache__
+backend/**/__pycache__
+backend/**/*.pyc
+*.zip
