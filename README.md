@@ -11,11 +11,10 @@ This repository root is the **whole project**. Deploy this root with Railway's D
 
 ## Railway
 1. Deploy the repository **root** (do not deploy only `frontend/react`).
-2. Add a Railway Volume mounted at `/data` if you want persistent SQLite storage.
-3. Or set `DATABASE_URL` to a Railway PostgreSQL database.
-4. Set `SECRET_KEY` to a long random value.
-5. Open `/health` after deployment.
+2. For data that survives redeploys, add a Railway Volume to this service and mount it at `/data`, or set `DATABASE_URL` to a Railway PostgreSQL database.
+3. Set `SECRET_KEY` to a long random value and keep it unchanged between deploys.
+4. Open `/health` after deployment.
 
-For persistent production data, mount a Railway Volume at `/data` or set `DATABASE_URL` to PostgreSQL. Without either, the app starts with temporary SQLite storage under `/tmp/instakids-data`; accounts, sessions, messages, and media can be lost when Railway replaces the container.
+Without a Railway Volume or PostgreSQL database, Railway uses temporary SQLite storage under `/tmp/instakids-data`; accounts, posts, messages, and media can be lost when the container is replaced. Sessions last 30 days and renew with activity, but the session and app data still require a persistent backend database to survive a deployment.
 
 Do not commit `backend/db.sqlite3`; production data belongs in the Railway Volume or PostgreSQL.

@@ -7,7 +7,8 @@ Bu versiya frontend va backendni **bitta Railway service** ichida ishlatadi. `/p
 1. GitHub repo root'ini Railway'ga ulang.
 2. Root Directory'ni o‘zgartirmang.
 3. Root'dagi `Dockerfile` avtomatik ishlatiladi.
-4. Doimiy ma’lumotlar uchun Railway Volume qo‘shib, mount path’ni `/data` qiling. Bu imkoniyat bo‘lmasa, service vaqtinchalik SQLite bazasi bilan ham ishga tushadi.
+4. Railway service sozlamalarida **Volume** qo‘shib, mount path’ni `/data` qiling. Yoki `DATABASE_URL` orqali PostgreSQL ulang.
+5. `SECRET_KEY` ni uzun, maxfiy qiymatga o‘rnating va deploylar orasida o‘zgartirmang.
 
 Volume yoki PostgreSQL `DATABASE_URL` bo‘lmasa, ilova `/tmp/instakids-data` dagi vaqtinchalik bazadan foydalanadi. Akkauntlar, xabarlar va media deploy yoki container almashtirilganda yo‘qolishi mumkin. Doimiy saqlash uchun Volume yoki PostgreSQL tavsiya qilinadi. Oldingi deploylarda yo‘qolgan ma’lumotlarni bu o‘zgarish tiklay olmaydi; ularni faqat mavjud backup yoki eski persistent bazadan qaytarish mumkin.
 
@@ -59,7 +60,7 @@ Ilova ichidagi boshqaruv paneli `/admin` manzilida, Django’ning texnik admin p
 
 - `BACKEND_URL` kerak emas.
 - Frontend va backend bir xil domen orqali ishlaydi.
-- Django session cookie 30 kun saqlanadi.
+- Django session cookie 30 kun saqlanadi va faol foydalanishda muddati yangilanadi.
 - Brauzerdagi eski login yozuvi server sessioni bilan tekshiriladi; session mavjud bo‘lsa akkaunt avtomatik tiklanadi.
 - Yozishmalar `SocialState` orqali server database'ida saqlanadi.
 - Railway Volume `/data` akkauntlar, sessionlar, yozishmalar va media uchun persistent storage beradi.
