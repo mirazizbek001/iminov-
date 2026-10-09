@@ -2002,8 +2002,8 @@ function ReelsCard({ r }) {
             ♪ Original audio · {u.username}
           </p>
         </div>
-        <div className="absolute right-3 bottom-3 z-20 flex flex-col items-center gap-3">
-          <div className="flex flex-col items-center gap-1">
+        <div className="absolute right-3 bottom-2 z-20 flex flex-col items-center gap-2.5">
+          <div className="flex flex-col items-center gap-[3px]">
             <button
               onClick={() => A.like(r.id, "reel")}
               aria-label="Reelsga like"
@@ -2016,9 +2016,9 @@ function ReelsCard({ r }) {
                 className={liked ? "text-[#ff4f6d]" : "text-white"}
               />
             </button>
-            <span className="text-[11px] font-semibold">{fmtN(r.likes.length)}</span>
+            <span className="text-[11px] font-semibold leading-none">{fmtN(r.likes.length)}</span>
           </div>
-          <div className="flex flex-col items-center gap-1">
+          <div className="flex flex-col items-center gap-[3px]">
             <button
               onClick={() => setCommentsOpen(true)}
               aria-label="Reelsga izoh yozish"
@@ -2026,9 +2026,9 @@ function ReelsCard({ r }) {
             >
               <MessageCircle size={26} className="text-white" />
             </button>
-            <span className="text-[11px] font-semibold">{fmtN((r.comments || []).length)}</span>
+            <span className="text-[11px] font-semibold leading-none">{fmtN((r.comments || []).length)}</span>
           </div>
-          <div className="flex flex-col items-center gap-1">
+          <div className="flex flex-col items-center gap-[3px]">
             <button
               onClick={() => setShare(true)}
               aria-label="Reelsni ulashish"
@@ -2036,9 +2036,9 @@ function ReelsCard({ r }) {
             >
               <Send size={25} className="text-white" />
             </button>
-            <span className="text-[11px] font-semibold">Yubor</span>
+            <span className="text-[11px] font-semibold leading-none">Yubor</span>
           </div>
-          <div className="flex flex-col items-center gap-1">
+          <div className="flex flex-col items-center gap-[3px]">
             <button
               onClick={() => A.save(r.id)}
               aria-label="Saqlash"
@@ -2047,9 +2047,9 @@ function ReelsCard({ r }) {
             >
               <Bookmark size={25} fill={saved ? "currentColor" : "none"} className="text-white" />
             </button>
-            <span className="text-[11px] font-semibold">Saql.</span>
+            <span className="text-[11px] font-semibold leading-none">Saql.</span>
           </div>
-          <div className="mt-1 flex flex-col items-center gap-1">
+          <div className="mt-0.5 flex flex-col items-center gap-1">
             <ReelMenu r={r} up />
           </div>
         </div>

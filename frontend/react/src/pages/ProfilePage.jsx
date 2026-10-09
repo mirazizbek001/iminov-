@@ -145,7 +145,7 @@ function Profile({ id, goChat }) {
           <div className="flex flex-wrap items-center gap-3 sm:gap-5">
             <h1 className="text-xl font-normal">{u.username}</h1>
             {own && (
-              <div className="ml-auto flex shrink-0 items-center gap-2">
+              <div className="flex shrink-0 items-center gap-2">
                 <button
                   onClick={open.create}
                   aria-label="Post qo‘shish"
