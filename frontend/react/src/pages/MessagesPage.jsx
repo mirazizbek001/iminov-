@@ -1108,7 +1108,7 @@ function Messages({ peer, setPeer }) {
                 Xabar yuborish uchun blokni bekor qiling.
               </p>
             )}
-            <div className="message-composer flex items-center gap-1.5 border-t border-neutral-200 bg-white/95 px-2 py-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] !border-[#6aa5f0] !bg-[#0b1224]/95 md:m-4 md:gap-2 md:border-0 md:bg-transparent md:px-0 md:py-0 md:pb-0">
+            <div className="message-composer flex items-center gap-1.5 border-t border-neutral-200 bg-white/95 px-2 py-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] !border-[#6aa5f0] !bg-[#1a5fc8] md:m-4 md:gap-2 md:border-0 md:bg-transparent md:px-0 md:py-0 md:pb-0">
               <button
                 onClick={recording ? stopVoiceRecording : startVoiceRecording}
                 disabled={restricted || conversationBlocked}
