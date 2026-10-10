@@ -1127,7 +1127,7 @@ function Messages({ peer, setPeer }) {
                 )}
               </button>
               <div
-                className={`flex min-w-0 flex-1 items-center gap-0.5 rounded-full border-2 bg-neutral-50 px-2 py-1.5 transition focus-within:ring-2 focus-within:ring-0 !border-[#6aa5f0] !bg-[#2a70d8] ${recording ? "border-red-300 bg-red-50 !border-red-900 !bg-red-950/20" : "border-neutral-300"}`}
+                className={`flex min-w-0 flex-1 items-center gap-0.5 rounded-full border-2 px-2 py-1.5 transition focus-within:ring-2 focus-within:ring-0 !border-[#6aa5f0] !bg-[#1a5fc8] ${recording ? "border-red-300 bg-red-50 !border-red-900 !bg-red-950/20" : "border-neutral-300 bg-transparent"}`}
               >
                 {recording ? (
                   <>
